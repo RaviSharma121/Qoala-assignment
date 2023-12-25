@@ -17,6 +17,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     .catch(err => console.log(err));
 
 //app.use(express.json());
+app.use(express.static(path.resolve(__dirname,'build')))
 
 app.use(express.json({ limit: '10mb' }));
 
