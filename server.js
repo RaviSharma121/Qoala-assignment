@@ -27,5 +27,6 @@ app.use(cors());
 
 // Routes
 app.use('/api/ocr', require('./routes/ocr'));
+app.get('*', (req, res) => res.sendFile(path.resolve('build', 'index.html')));
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
